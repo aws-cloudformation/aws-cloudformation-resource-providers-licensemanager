@@ -26,7 +26,7 @@ Resources:
         Name: test
       LicenseName: test
       ProductName: hehe
-      HomeRegion: !Sub ${AWS::Region}
+      HomeRegion: { Sub: ${AWS::Region} }
       Validity:
         Begin: '2020-04-30T11:07:36.639Z'
         End: '2021-09-29T11:07:36.639Z'
@@ -45,4 +45,4 @@ Resources:
         RenewType: Weekly
         ProvisionalConfiguration:
           MaxTimeToLiveInMinutes: 60
-      ClientToken: !GetAtt LambdaTestRole.Arn
+      ClientToken: { GetAtt: LambdaTestRole.Arn }
