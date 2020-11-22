@@ -5,10 +5,10 @@ Resources:
     Type: AWS::IAM::Role
     Properties:
       ManagedPolicyArns:
-        - !Join
+        Fn::Join:
           - ''
           - - 'arn:'
-            - { Ref: 'AWS::Partition' }
+            - Fn::Ref: 'AWS::Partition'
             - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
       AssumeRolePolicyDocument:
         Statement:
