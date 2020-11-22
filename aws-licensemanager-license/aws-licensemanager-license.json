@@ -18,7 +18,10 @@
           "format": "date-time"
         }
       },
-      "required": ["Begin", "End"]
+      "required": [
+        "Begin",
+        "End"
+      ]
     },
     "StringList": {
       "type": "array",
@@ -37,7 +40,9 @@
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": [
+        "Name"
+      ],
       "additionalProperties": false
     },
     "EntitlementList": {
@@ -72,7 +77,10 @@
           "$ref": "#/definitions/RuleList"
         }
       },
-      "required": ["Name", "Unit"],
+      "required": [
+        "Name",
+        "Unit"
+      ],
       "additionalProperties": false
     },
     "RuleList": {
@@ -95,7 +103,11 @@
           "type": "string"
         }
       },
-      "required": ["Name", "Value", "Unit"],
+      "required": [
+        "Name",
+        "Value",
+        "Unit"
+      ],
       "additionalProperties": false
     },
     "ConsumptionConfiguration": {
@@ -120,7 +132,9 @@
           "type": "integer"
         }
       },
-      "required": ["MaxTimeToLiveInMinutes"],
+      "required": [
+        "MaxTimeToLiveInMinutes"
+      ],
       "additionalProperties": false
     },
     "BorrowConfiguration": {
@@ -133,7 +147,10 @@
           "type": "boolean"
         }
       },
-      "required": ["MaxTimeToLiveInMinutes", "AllowEarlyCheckIn"],
+      "required": [
+        "MaxTimeToLiveInMinutes",
+        "AllowEarlyCheckIn"
+      ],
       "additionalProperties": false
     },
     "MetadataList": {
@@ -153,7 +170,10 @@
           "type": "string"
         }
       },
-      "required": ["Name", "Value"],
+      "required": [
+        "Name",
+        "Value"
+      ],
       "additionalProperties": false
     },
     "LicenseStatus": {
@@ -176,7 +196,10 @@
           "type": "string"
         }
       },
-      "required": ["Name", "Value"],
+      "required": [
+        "Name",
+        "Value"
+      ],
       "additionalProperties": false
     },
     "Filter": {
@@ -189,7 +212,10 @@
           "$ref": "#/definitions/StringList"
         }
       },
-      "required": ["Name", "Values"],
+      "required": [
+        "Name",
+        "Values"
+      ],
       "additionalProperties": false
     },
     "FilterList": {
@@ -300,23 +326,37 @@
     "/properties/Version",
     "/properties/SourceVersion"
   ],
-  "readOnlyProperties": ["/properties/LicenseArn"],
-  "primaryIdentifier": ["/properties/LicenseArn"],
+  "readOnlyProperties": [
+    "/properties/LicenseArn"
+  ],
+  "primaryIdentifier": [
+    "/properties/LicenseArn"
+  ],
   "handlers": {
     "create": {
-      "permissions": ["license-manager:CreateLicense"]
+      "permissions": [
+        "license-manager:CreateLicense"
+      ]
     },
     "read": {
-      "permissions": ["license-manager:GetLicense"]
+      "permissions": [
+        "license-manager:GetLicense"
+      ]
     },
     "update": {
-      "permissions": ["license-manager:CreateLicenseVersion"]
+      "permissions": [
+        "license-manager:CreateLicenseVersion"
+      ]
     },
     "delete": {
-      "permissions": ["license-manager:DeleteLicense"]
+      "permissions": [
+        "license-manager:DeleteLicense"
+      ]
     },
     "list": {
-      "permissions": ["license-manager:ListLicenses"]
+      "permissions": [
+        "license-manager:ListLicenses"
+      ]
     }
   }
 }

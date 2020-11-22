@@ -1,6 +1,8 @@
 {
   "GrantArn": "",
   "GrantName": "",
-  "AllowedOperations": [""],
+  "AllowedOperations": [
+    ""
+  ],
   "ClientToken": ""
 }

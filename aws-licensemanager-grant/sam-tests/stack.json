@@ -8,8 +8,12 @@
         "GrantName": "test",
         "HomeRegion": "us-east-1",
         "LicenseArn": "arn:aws:license-manager::619843372379:license:l-f4ecf2a8d4524f96a1e8caaf513eb485",
-        "Principals": ["arn:aws:iam::272754913151:root"],
-        "AllowedOperations": ["CreateGrant"],
+        "Principals": [
+          "arn:aws:iam::272754913151:root"
+        ],
+        "AllowedOperations": [
+          "CreateGrant"
+        ],
         "ClientToken": "90dasdujb333dee2jh"
       }
     }

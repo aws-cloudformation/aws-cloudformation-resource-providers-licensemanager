@@ -38,7 +38,10 @@
           "type": "string"
         }
       },
-      "required": ["Name", "Value"],
+      "required": [
+        "Name",
+        "Value"
+      ],
       "additionalProperties": false
     },
     "StringList": {
@@ -58,7 +61,10 @@
           "$ref": "#/definitions/StringList"
         }
       },
-      "required": ["Name", "Values"],
+      "required": [
+        "Name",
+        "Values"
+      ],
       "additionalProperties": false
     },
     "FilterList": {
@@ -145,7 +151,9 @@
   },
   "additionalProperties": false,
   "required": [],
-  "readOnlyProperties": ["/properties/GrantArn"],
+  "readOnlyProperties": [
+    "/properties/GrantArn"
+  ],
   "writeOnlyProperties": [
     "/properties/ClientToken",
     "/properties/GranteePrincipalArn",
@@ -156,22 +164,34 @@
     "/properties/ParentArn",
     "/properties/Version"
   ],
-  "primaryIdentifier": ["/properties/GrantArn"],
+  "primaryIdentifier": [
+    "/properties/GrantArn"
+  ],
   "handlers": {
     "create": {
-      "permissions": ["license-manager:CreateGrant"]
+      "permissions": [
+        "license-manager:CreateGrant"
+      ]
     },
     "read": {
-      "permissions": ["license-manager:GetGrant"]
+      "permissions": [
+        "license-manager:GetGrant"
+      ]
     },
     "update": {
-      "permissions": ["license-manager:CreateGrantVersion"]
+      "permissions": [
+        "license-manager:CreateGrantVersion"
+      ]
     },
     "delete": {
-      "permissions": ["license-manager:DeleteGrant"]
+      "permissions": [
+        "license-manager:DeleteGrant"
+      ]
     },
     "list": {
-      "permissions": ["license-manager:ListDistributedGrants"]
+      "permissions": [
+        "license-manager:ListDistributedGrants"
+      ]
     }
   }
 }
