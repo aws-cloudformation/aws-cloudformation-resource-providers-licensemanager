@@ -1,29 +1,28 @@
 {
-    "Issuer": {
-        "Name": "test"
-    },
-    "LicenseName": "test",
-    "ProductName": "hehe",
-    "HomeRegion": "us-east-1",
-    "Validity": {
-        "Begin": "2020-04-30T11:07:36.639Z",
-        "End": "2021-09-29T11:07:36.639Z"
-    },
-    "Beneficiary": "Mandy",
-    "ProductSKU": "test",
-    "LicenseMetadata": [
-        {
-            "Name": "My Awesome Software",
-            "Value": "It is an awesome project"
-        }
-    ],
-    "Entitlements": [
-    ],
-    "ConsumptionConfiguration": {
-        "RenewType": "Weekly",
-        "ProvisionalConfiguration": {
-            "MaxTimeToLiveInMinutes": 60
-        }
-    },
-    "ClientToken": "cdce2qd33"
+  "Issuer": {
+    "Name": "test"
+  },
+  "LicenseName": "test",
+  "ProductName": "hehe",
+  "HomeRegion": "us-east-1",
+  "Validity": {
+    "Begin": "2020-04-30T11:07:36.639Z",
+    "End": "2021-09-29T11:07:36.639Z"
+  },
+  "Beneficiary": "Mandy",
+  "ProductSKU": "test",
+  "LicenseMetadata": [
+    {
+      "Name": "My Awesome Software",
+      "Value": "It is an awesome project"
+    }
+  ],
+  "Entitlements": [],
+  "ConsumptionConfiguration": {
+    "RenewType": "Weekly",
+    "ProvisionalConfiguration": {
+      "MaxTimeToLiveInMinutes": 60
+    }
+  },
+  "ClientToken": "cdce2qd33"
 }

@@ -1,31 +1,31 @@
 {
-    "Issuer": {
-        "Name": "test"
-    },
-    "LicenseArn": "arn:aws:license-manager::272754913151:license:l-6488c75fa996491c86ee54f869e54546",
-    "SourceVersion": "1",
-    "LicenseName": "test",
-    "ProductName": "hehe",
-    "HomeRegion": "us-east-1",
-    "Validity": {
-        "Begin": "2020-04-30T11:07:36.639Z",
-        "End": "2021-09-29T11:07:36.639Z"
-    },
-    "Entitlements": [
-        {
-            "Name": "test1",
-            "MaxCount": 200,
-            "Unit": "Count",
-            "AllowCheckIn": true,
-            "Overage": true
-        }
-    ],
-    "ConsumptionConfiguration": {
-        "RenewType": "Weekly",
-        "ProvisionalConfiguration": {
-            "MaxTimeToLiveInMinutes": 60
-        }
-    },
-    "Status": "DEACTIVATED",
-    "ClientToken": "90wijd32232o222wo33r3e22n9weejh"
+  "Issuer": {
+    "Name": "test"
+  },
+  "LicenseArn": "arn:aws:license-manager::272754913151:license:l-6488c75fa996491c86ee54f869e54546",
+  "SourceVersion": "1",
+  "LicenseName": "test",
+  "ProductName": "hehe",
+  "HomeRegion": "us-east-1",
+  "Validity": {
+    "Begin": "2020-04-30T11:07:36.639Z",
+    "End": "2021-09-29T11:07:36.639Z"
+  },
+  "Entitlements": [
+    {
+      "Name": "test1",
+      "MaxCount": 200,
+      "Unit": "Count",
+      "AllowCheckIn": true,
+      "Overage": true
+    }
+  ],
+  "ConsumptionConfiguration": {
+    "RenewType": "Weekly",
+    "ProvisionalConfiguration": {
+      "MaxTimeToLiveInMinutes": 60
+    }
+  },
+  "Status": "DEACTIVATED",
+  "ClientToken": "90wijd32232o222wo33r3e22n9weejh"
 }

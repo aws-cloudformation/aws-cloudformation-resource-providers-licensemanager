@@ -1,198 +1,177 @@
 {
-    "typeName": "AWS::LicenseManager::Grant",
-    "description": "An example resource schema demonstrating some basic constructs and validation rules.",
-    "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-    "definitions": {
-        "Arn": {
-            "type": "string",
-            "maxLength": 2048
-        },
-        "ArnList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Arn"
-            }
-        },
-        "AllowedOperationList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "type": "string"
-            }
-        },
-        "TagList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Tag"
-            }
-        },
-        "Tag": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "Value": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "Name",
-                "Value"
-            ],
-            "additionalProperties": false
-        },
-        "StringList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "type": "string"
-            }
-        },
-        "Filter": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "Values": {
-                    "$ref": "#/definitions/StringList"
-                }
-            },
-            "required": [
-                "Name",
-                "Values"
-            ],
-            "additionalProperties": false
-        },
-        "FilterList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Filter"
-            }
-        }
+  "typeName": "AWS::LicenseManager::Grant",
+  "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "definitions": {
+    "Arn": {
+      "type": "string",
+      "maxLength": 2048
     },
-    "properties": {
-        "GrantArn": {
-            "description": "Arn of the grant.",
-            "$ref": "#/definitions/Arn"
-        },
-        "GrantArns": {
-            "description": "Arns of the grants.",
-            "$ref": "#/definitions/ArnList"
-        },
-        "GrantName": {
-            "description": "Name for the created Grant.",
-            "type": "string"
-        },
-        "ParentArn": {
-            "description": "Arn of the grant parent.",
-            "$ref": "#/definitions/Arn"
-        },
-        "LicenseArn": {
-            "description": "License Arn for the grant.",
-            "$ref": "#/definitions/Arn"
-        },
-        "GranteePrincipalArn": {
-            "description": "Grantee principal arn.",
-            "$ref": "#/definitions/Arn"
-        },
-        "HomeRegion": {
-            "description": "Home region for the created license.",
-            "type": "string"
-        },
-        "GrantStatus": {
-            "type": "string"
-        },
-        "StatusReason": {
-            "description": "Reason of the status.",
-            "type": "string"
-        },
-        "Version": {
-            "description": "The version of the grant.",
-            "type": "string"
-        },
-        "GrantedOperations": {
-            "$ref": "#/definitions/AllowedOperationList"
-        },
-        "AllowedOperations": {
-            "$ref": "#/definitions/AllowedOperationList"
-        },
-        "Principals": {
-            "$ref": "#/definitions/ArnList"
-        },
-        "Tags": {
-            "$ref": "#/definitions/TagList"
-        },
-        "Filters": {
-            "$ref": "#/definitions/FilterList"
-        },
-        "MaxResults": {
-            "type": "integer",
-            "minLength": 1,
-            "maxLength": 100
-        },
-        "NextToken": {
-            "type": "string"
-        },
-        "ClientToken": {
-            "type": "string"
-        },
-        "Status": {
-            "type": "string"
-        },
-        "SourceVersion": {
-            "description": "The version of the grant.",
-            "type": "string"
-        }
+    "ArnList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Arn"
+      }
     },
-    "additionalProperties": false,
-    "required": [
-    ],
-    "readOnlyProperties": [
-        "/properties/GrantArn"
-    ],
-    "writeOnlyProperties": [
-        "/properties/ClientToken",
-        "/properties/GranteePrincipalArn",
-        "/properties/Principals",
-        "/properties/AllowedOperations",
-        "/properties/GrantedOperations",
-        "/properties/GrantStatus",
-        "/properties/ParentArn",
-        "/properties/Version"
-    ],
-    "primaryIdentifier": [
-        "/properties/GrantArn"
-    ],
-    "handlers": {
-        "create": {
-            "permissions": [
-                "license-manager:CreateGrant"
-            ]
+    "AllowedOperationList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "TagList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
         },
-        "read": {
-            "permissions": [
-                "license-manager:GetGrant"
-            ]
-        },
-        "update": {
-            "permissions": [
-                "license-manager:CreateGrantVersion"
-            ]
-        },
-        "delete": {
-            "permissions": [
-                "license-manager:DeleteGrant"
-            ]
-        },
-        "list": {
-            "permissions": [
-                "license-manager:ListDistributedGrants"
-            ]
+        "Value": {
+          "type": "string"
         }
+      },
+      "required": ["Name", "Value"],
+      "additionalProperties": false
+    },
+    "StringList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "Filter": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Values": {
+          "$ref": "#/definitions/StringList"
+        }
+      },
+      "required": ["Name", "Values"],
+      "additionalProperties": false
+    },
+    "FilterList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Filter"
+      }
     }
+  },
+  "properties": {
+    "GrantArn": {
+      "description": "Arn of the grant.",
+      "$ref": "#/definitions/Arn"
+    },
+    "GrantArns": {
+      "description": "Arns of the grants.",
+      "$ref": "#/definitions/ArnList"
+    },
+    "GrantName": {
+      "description": "Name for the created Grant.",
+      "type": "string"
+    },
+    "ParentArn": {
+      "description": "Arn of the grant parent.",
+      "$ref": "#/definitions/Arn"
+    },
+    "LicenseArn": {
+      "description": "License Arn for the grant.",
+      "$ref": "#/definitions/Arn"
+    },
+    "GranteePrincipalArn": {
+      "description": "Grantee principal arn.",
+      "$ref": "#/definitions/Arn"
+    },
+    "HomeRegion": {
+      "description": "Home region for the created license.",
+      "type": "string"
+    },
+    "GrantStatus": {
+      "type": "string"
+    },
+    "StatusReason": {
+      "description": "Reason of the status.",
+      "type": "string"
+    },
+    "Version": {
+      "description": "The version of the grant.",
+      "type": "string"
+    },
+    "GrantedOperations": {
+      "$ref": "#/definitions/AllowedOperationList"
+    },
+    "AllowedOperations": {
+      "$ref": "#/definitions/AllowedOperationList"
+    },
+    "Principals": {
+      "$ref": "#/definitions/ArnList"
+    },
+    "Tags": {
+      "$ref": "#/definitions/TagList"
+    },
+    "Filters": {
+      "$ref": "#/definitions/FilterList"
+    },
+    "MaxResults": {
+      "type": "integer",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "NextToken": {
+      "type": "string"
+    },
+    "ClientToken": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "string"
+    },
+    "SourceVersion": {
+      "description": "The version of the grant.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [],
+  "readOnlyProperties": ["/properties/GrantArn"],
+  "writeOnlyProperties": [
+    "/properties/ClientToken",
+    "/properties/GranteePrincipalArn",
+    "/properties/Principals",
+    "/properties/AllowedOperations",
+    "/properties/GrantedOperations",
+    "/properties/GrantStatus",
+    "/properties/ParentArn",
+    "/properties/Version"
+  ],
+  "primaryIdentifier": ["/properties/GrantArn"],
+  "handlers": {
+    "create": {
+      "permissions": ["license-manager:CreateGrant"]
+    },
+    "read": {
+      "permissions": ["license-manager:GetGrant"]
+    },
+    "update": {
+      "permissions": ["license-manager:CreateGrantVersion"]
+    },
+    "delete": {
+      "permissions": ["license-manager:DeleteGrant"]
+    },
+    "list": {
+      "permissions": ["license-manager:ListDistributedGrants"]
+    }
+  }
 }

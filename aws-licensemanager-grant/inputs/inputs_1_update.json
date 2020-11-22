@@ -1,6 +1,6 @@
 {
-    "GrantArn": "",
-    "GrantName": "",
-    "AllowedOperations": [""],
-    "ClientToken": ""
+  "GrantArn": "",
+  "GrantName": "",
+  "AllowedOperations": [""],
+  "ClientToken": ""
 }

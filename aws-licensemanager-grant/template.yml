@@ -21,4 +21,3 @@ Resources:
       Handler: software.amazon.licensemanager.grant.HandlerWrapper::testEntrypoint
       Runtime: java8
       CodeUri: ./target/aws-licensemanager-grant-1.0.jar
-

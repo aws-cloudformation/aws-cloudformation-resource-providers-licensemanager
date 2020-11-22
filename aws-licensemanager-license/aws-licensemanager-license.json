@@ -1,362 +1,322 @@
 {
-    "typeName": "AWS::LicenseManager::License",
-    "description": "Resource Type definition for AWS::LicenseManager::License",
-    "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-licensemanager.git",
-    "definitions": {
-        "ValidityDateFormat": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "Begin": {
-                    "description": "Validity begin date for the license.",
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "End": {
-                    "description": "Validity begin date for the license.",
-                    "type": "string",
-                    "format": "date-time"
-                }
-            },
-            "required": [
-                "Begin",
-                "End"
-            ]
+  "typeName": "AWS::LicenseManager::License",
+  "description": "Resource Type definition for AWS::LicenseManager::License",
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-licensemanager.git",
+  "definitions": {
+    "ValidityDateFormat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Begin": {
+          "description": "Validity begin date for the license.",
+          "type": "string",
+          "format": "date-time"
         },
-        "StringList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "type": "string"
-            }
+        "End": {
+          "description": "Validity begin date for the license.",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["Begin", "End"]
+    },
+    "StringList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "IssuerData": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
         },
-        "IssuerData": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "SignKey": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "Name"
-            ],
-            "additionalProperties": false
+        "SignKey": {
+          "type": "string"
+        }
+      },
+      "required": ["Name"],
+      "additionalProperties": false
+    },
+    "EntitlementList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Entitlement"
+      }
+    },
+    "Entitlement": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
         },
-        "EntitlementList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Entitlement"
-            }
+        "Value": {
+          "type": "string"
         },
-        "Entitlement": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "Value": {
-                    "type": "string"
-                },
-                "MaxCount": {
-                    "type": "integer"
-                },
-                "Overage": {
-                    "type": "boolean"
-                },
-                "Unit": {
-                    "type": "string"
-                },
-                "AllowCheckIn": {
-                    "type": "boolean"
-                },
-                "CheckoutRules": {
-                    "$ref": "#/definitions/RuleList"
-                }
-            },
-            "required": [
-                "Name",
-                "Unit"
-            ],
-            "additionalProperties": false
+        "MaxCount": {
+          "type": "integer"
         },
-        "RuleList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Rule"
-            }
+        "Overage": {
+          "type": "boolean"
         },
-        "Rule": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "Value": {
-                    "type": "string"
-                },
-                "Unit": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "Name",
-                "Value",
-                "Unit"
-            ],
-            "additionalProperties": false
+        "Unit": {
+          "type": "string"
         },
-        "ConsumptionConfiguration": {
-            "type": "object",
-            "properties": {
-                "RenewType": {
-                    "type": "string"
-                },
-                "ProvisionalConfiguration": {
-                    "$ref": "#/definitions/ProvisionalConfiguration"
-                },
-                "BorrowConfiguration": {
-                    "$ref": "#/definitions/BorrowConfiguration"
-                }
-            },
-            "additionalProperties": false
+        "AllowCheckIn": {
+          "type": "boolean"
+        },
+        "CheckoutRules": {
+          "$ref": "#/definitions/RuleList"
+        }
+      },
+      "required": ["Name", "Unit"],
+      "additionalProperties": false
+    },
+    "RuleList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Rule"
+      }
+    },
+    "Rule": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string"
+        }
+      },
+      "required": ["Name", "Value", "Unit"],
+      "additionalProperties": false
+    },
+    "ConsumptionConfiguration": {
+      "type": "object",
+      "properties": {
+        "RenewType": {
+          "type": "string"
         },
         "ProvisionalConfiguration": {
-            "type": "object",
-            "properties": {
-                "MaxTimeToLiveInMinutes": {
-                    "type": "integer"
-                }
-            },
-            "required": [
-                "MaxTimeToLiveInMinutes"
-            ],
-            "additionalProperties": false
+          "$ref": "#/definitions/ProvisionalConfiguration"
         },
         "BorrowConfiguration": {
-            "type": "object",
-            "properties": {
-                "MaxTimeToLiveInMinutes": {
-                    "type": "integer"
-                },
-                "AllowEarlyCheckIn": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "MaxTimeToLiveInMinutes",
-                "AllowEarlyCheckIn"
-            ],
-            "additionalProperties": false
-        },
-        "MetadataList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Metadata"
-            }
-        },
-        "Metadata": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "Value": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "Name",
-                "Value"
-            ],
-            "additionalProperties": false
-        },
-        "LicenseStatus": {
-            "type": "string"
-        },
-        "TagList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Tag"
-            }
-        },
-        "Tag": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "Value": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "Name",
-                "Value"
-            ],
-            "additionalProperties": false
-        },
-        "Filter": {
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string"
-                },
-                "Values": {
-                    "$ref": "#/definitions/StringList"
-                }
-            },
-            "required": [
-                "Name",
-                "Values"
-            ],
-            "additionalProperties": false
-        },
-        "FilterList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Filter"
-            }
-        },
-        "Arn": {
-            "type": "string",
-            "maxLength": 2048
-        },
-        "ArnList": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Arn"
-            }
+          "$ref": "#/definitions/BorrowConfiguration"
         }
+      },
+      "additionalProperties": false
     },
-    "properties": {
-        "ProductSKU": {
-            "description": "ProductSKU of the license.",
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 1024
-        },
-        "Issuer": {
-            "$ref": "#/definitions/IssuerData"
-        },
-        "LicenseName": {
-            "description": "Name for the created license.",
-            "type": "string"
-        },
-        "ProductName": {
-            "description": "Product name for the created license.",
-            "type": "string"
-        },
-        "HomeRegion": {
-            "description": "Home region for the created license.",
-            "type": "string"
-        },
-        "Validity": {
-            "$ref": "#/definitions/ValidityDateFormat"
-        },
-        "Entitlements": {
-            "$ref": "#/definitions/EntitlementList"
-        },
-        "Beneficiary": {
-            "description": "Beneficiary of the license.",
-            "type": "string"
-        },
-        "ConsumptionConfiguration": {
-            "$ref": "#/definitions/ConsumptionConfiguration"
-        },
-        "LicenseMetadata": {
-            "$ref": "#/definitions/MetadataList"
-        },
-        "ClientToken": {
-            "type": "string"
-        },
-        "Tags": {
-            "$ref": "#/definitions/TagList"
-        },
-        "LicenseArn": {
-            "description": "Amazon Resource Name is a unique name for each resource.",
-            "$ref": "#/definitions/Arn"
-        },
-        "LicenseArns": {
-            "description": "Amazon Resource Name is a unique name for each resource.",
-            "$ref": "#/definitions/ArnList"
-        },
-        "Status": {
-            "$ref": "#/definitions/LicenseStatus"
-        },
-        "SourceVersion": {
-            "description": "The version of the license.",
-            "type": "string"
-        },
-        "Filters": {
-            "$ref": "#/definitions/FilterList"
-        },
-        "MaxResults": {
-            "type": "integer",
-            "minLength": 1,
-            "maxLength": 100
-        },
-        "NextToken": {
-            "type": "string"
-        },
-        "Version": {
-            "description": "The version of the license.",
-            "type": "string"
+    "ProvisionalConfiguration": {
+      "type": "object",
+      "properties": {
+        "MaxTimeToLiveInMinutes": {
+          "type": "integer"
         }
+      },
+      "required": ["MaxTimeToLiveInMinutes"],
+      "additionalProperties": false
     },
-    "additionalProperties": false,
-    "required": [
-        "Issuer",
-        "HomeRegion",
-        "Validity",
-        "ConsumptionConfiguration",
-        "Entitlements"
-    ],
-    "writeOnlyProperties": [
-        "/properties/ClientToken",
-        "/properties/Status",
-        "/properties/Version",
-        "/properties/SourceVersion"
-    ],
-    "readOnlyProperties": [
-        "/properties/LicenseArn"
-    ],
-    "primaryIdentifier": [
-        "/properties/LicenseArn"
-    ],
-    "handlers": {
-        "create": {
-            "permissions": [
-                "license-manager:CreateLicense"
-            ]
+    "BorrowConfiguration": {
+      "type": "object",
+      "properties": {
+        "MaxTimeToLiveInMinutes": {
+          "type": "integer"
         },
-        "read": {
-            "permissions": [
-                "license-manager:GetLicense"
-            ]
-        },
-        "update": {
-            "permissions": [
-                "license-manager:CreateLicenseVersion"
-            ]
-        },
-        "delete": {
-            "permissions": [
-                "license-manager:DeleteLicense"
-            ]
-        },
-        "list": {
-            "permissions": [
-                "license-manager:ListLicenses"
-            ]
+        "AllowEarlyCheckIn": {
+          "type": "boolean"
         }
+      },
+      "required": ["MaxTimeToLiveInMinutes", "AllowEarlyCheckIn"],
+      "additionalProperties": false
+    },
+    "MetadataList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Metadata"
+      }
+    },
+    "Metadata": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "required": ["Name", "Value"],
+      "additionalProperties": false
+    },
+    "LicenseStatus": {
+      "type": "string"
+    },
+    "TagList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "required": ["Name", "Value"],
+      "additionalProperties": false
+    },
+    "Filter": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Values": {
+          "$ref": "#/definitions/StringList"
+        }
+      },
+      "required": ["Name", "Values"],
+      "additionalProperties": false
+    },
+    "FilterList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Filter"
+      }
+    },
+    "Arn": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "ArnList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Arn"
+      }
     }
+  },
+  "properties": {
+    "ProductSKU": {
+      "description": "ProductSKU of the license.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "Issuer": {
+      "$ref": "#/definitions/IssuerData"
+    },
+    "LicenseName": {
+      "description": "Name for the created license.",
+      "type": "string"
+    },
+    "ProductName": {
+      "description": "Product name for the created license.",
+      "type": "string"
+    },
+    "HomeRegion": {
+      "description": "Home region for the created license.",
+      "type": "string"
+    },
+    "Validity": {
+      "$ref": "#/definitions/ValidityDateFormat"
+    },
+    "Entitlements": {
+      "$ref": "#/definitions/EntitlementList"
+    },
+    "Beneficiary": {
+      "description": "Beneficiary of the license.",
+      "type": "string"
+    },
+    "ConsumptionConfiguration": {
+      "$ref": "#/definitions/ConsumptionConfiguration"
+    },
+    "LicenseMetadata": {
+      "$ref": "#/definitions/MetadataList"
+    },
+    "ClientToken": {
+      "type": "string"
+    },
+    "Tags": {
+      "$ref": "#/definitions/TagList"
+    },
+    "LicenseArn": {
+      "description": "Amazon Resource Name is a unique name for each resource.",
+      "$ref": "#/definitions/Arn"
+    },
+    "LicenseArns": {
+      "description": "Amazon Resource Name is a unique name for each resource.",
+      "$ref": "#/definitions/ArnList"
+    },
+    "Status": {
+      "$ref": "#/definitions/LicenseStatus"
+    },
+    "SourceVersion": {
+      "description": "The version of the license.",
+      "type": "string"
+    },
+    "Filters": {
+      "$ref": "#/definitions/FilterList"
+    },
+    "MaxResults": {
+      "type": "integer",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "NextToken": {
+      "type": "string"
+    },
+    "Version": {
+      "description": "The version of the license.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Issuer",
+    "HomeRegion",
+    "Validity",
+    "ConsumptionConfiguration",
+    "Entitlements"
+  ],
+  "writeOnlyProperties": [
+    "/properties/ClientToken",
+    "/properties/Status",
+    "/properties/Version",
+    "/properties/SourceVersion"
+  ],
+  "readOnlyProperties": ["/properties/LicenseArn"],
+  "primaryIdentifier": ["/properties/LicenseArn"],
+  "handlers": {
+    "create": {
+      "permissions": ["license-manager:CreateLicense"]
+    },
+    "read": {
+      "permissions": ["license-manager:GetLicense"]
+    },
+    "update": {
+      "permissions": ["license-manager:CreateLicenseVersion"]
+    },
+    "delete": {
+      "permissions": ["license-manager:DeleteLicense"]
+    },
+    "list": {
+      "permissions": ["license-manager:ListLicenses"]
+    }
+  }
 }
