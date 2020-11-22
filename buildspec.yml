@@ -5,10 +5,8 @@ phases:
         java: openjdk8
         python: 3.7
     commands:
-        pip install pre-commit
+      -  pip install pre-commit cloudformation-cli-java-plugin
   build:
     commands:
       # pre-build check for commit hooks
       - pre-commit run --all-files
-      # install aws-cloudformation-rpdk
-      - pip install cloudformation-cli cloudformation-cli-java-plugin
