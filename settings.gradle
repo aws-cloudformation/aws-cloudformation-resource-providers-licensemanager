@@ -1,0 +1,5 @@
+rootProject.name = 'AWSCloudFormationResourceProvidersLicenseManager'
+
+include 'aws-licensemanager-license'
+include 'aws-licensemanager-grant'
+

@@ -1,0 +1,51 @@
+{
+  "credentials": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "sessionToken": ""
+  },
+  "action": "UPDATE",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-0cfdfa211dfe",
+    "desiredResourceState": {
+      "Issuer": {
+        "Name": "test"
+      },
+      "LicenseArn": "arn:aws:license-manager::272754913151:license:l-06172a217d124dcdb5f97f01175b0e6b",
+      "SourceVersion": "1",
+      "LicenseName": "test",
+      "ProductName": "hehe",
+      "HomeRegion": "us-east-1",
+      "Validity": {
+        "Begin": "2020-04-30T11:07:36.639Z",
+        "End": "2021-09-29T11:07:36.639Z"
+      },
+      "LicenseMetadata": [
+        {
+          "Name": "My Awesome Software",
+          "Value": "It is an awesome project"
+        }
+      ],
+      "Entitlements": [
+        {
+          "Name": "test1",
+          "MaxCount": 200,
+          "Unit": "Count",
+          "AllowCheckIn": true,
+          "Overage": true
+        }
+      ],
+      "ConsumptionConfiguration": {
+        "RenewType": "Weekly",
+        "ProvisionalConfiguration": {
+          "AllowEarlyCheckIn": true,
+          "maxTimeToLiveInMinutes": 60
+        }
+      },
+      "Status": "DEACTIVATED",
+      "ClientToken": "90dasdu0sjbkiowijd3389ywoiqee3eojooon9wjh"
+    },
+    "logicalResourceIdentifier": "tagcanary-test"
+  },
+  "callbackContext": null
+}

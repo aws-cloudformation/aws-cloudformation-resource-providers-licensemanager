@@ -1,0 +1,21 @@
+{
+  "credentials": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "sessionToken": ""
+  },
+  "action": "CREATE",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-0cfdfa211dfe",
+    "desiredResourceState": {
+      "GrantName": "test",
+      "HomeRegion": "us-east-1",
+      "LicenseArn": "",
+      "Principals": ["arn:aws:iam::619843372379:root"],
+      "AllowedOperations": ["CreateGrant"],
+      "ClientToken": "90dasdu0sjbk3jojewqhwew3djh"
+    },
+    "logicalResourceIdentifier": "tagcanary-test"
+  },
+  "callbackContext": null
+}

@@ -1,0 +1,19 @@
+{
+  "credentials": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "sessionToken": ""
+  },
+  "action": "UPDATE",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-0cfdfa211dfe",
+    "desiredResourceState": {
+      "GrantArn": "arn:aws:license-manager::272754913151:grant:g-304a4ebe7abe4f3f8e43bab151105e7e",
+      "GrantName": "test3",
+      "AllowedOperations": ["CreateGrant"],
+      "ClientToken": "90dasdu0sjbki3eowijd89ywoee2iqhwewjh"
+    },
+    "logicalResourceIdentifier": "tagcanary-test"
+  },
+  "callbackContext": null
+}

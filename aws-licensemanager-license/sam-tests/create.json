@@ -1,0 +1,49 @@
+{
+  "credentials": {
+    "accessKeyId": "ASIAXZ4JNDQ32JKSP5VD",
+    "secretAccessKey": "O/wqqdEMA7l7BYkSAA3BfG+GIX+K0UyoPlvFyQNM",
+    "sessionToken": "IQoJb3JpZ2luX2VjEPj//////////wEaCXVzLWVhc3QtMSJGMEQCIHcwBOBAqLRAWJvGm09UaV0WPJhnvrklV3z5KwiiNp1YAiAysV6GVlg4theM2f1HsYO877rx1XuvyDX9JBDBgOyqsSqfAghxEAEaDDUzNjYyMjIxMDEwMyIMPY7qhsoFjdNZaqfhKvwBEKWGlnU5G00grIh618l3w5faONuEzdb4FidTg98LX4LvYOAiQOJc3m09nN6H1eHS19EJzLl4IX8+9D9UoyNmoGIUrb2/znuHQX2sqVz1D0neyK7GMM91bw5PyOfkXhemnmoAe7kfUF61qptpp2T31Qp9YeY8ViO9+UqOaN872hGbLUkS+bSfwacZe6mBS4Vsk/gZ9k6Tw0Kq+U/k3X5Adss/dFY+GZPN+NbFmyLUTFNLI0qiLlgDKiwl91UPNud/0tnqlpNr/dJguusvoLCRlv/PVOtJ9MN3uahh5Kseako83LtldFeXpJku6YUlAziyJj/ee+2UK1H4MMsGMK/l3f0FOp4BkI94v72N3m0Z+BBfpRypnCYRJMChBtGs56ZHyWlz5Za6I8IyQbEaQ64jzOaHjz9t3KzdR7fiElGTeQRr7Q5+1HM7up27WE9Z8AFnJJrcpoQpmhgQLGs6DpQL4V05DsGx7Wp5+DojQvyRKHAg2IuwJm0F5RZbpe0gmx2pEBYJOCj3Q8ZhZC+TUuxaiAZ4RhYfpMPKtWXb/uLZLWl4+Mw="
+  },
+  "action": "CREATE",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-0cfdfa211dfe",
+    "desiredResourceState": {
+      "Issuer": {
+        "Name": "test"
+      },
+      "LicenseName": "test",
+      "ProductName": "hehe",
+      "HomeRegion": "us-east-1",
+      "Validity": {
+        "Begin": "2020-04-30T11:07:36.639Z",
+        "End": "2021-09-29T11:07:36.639Z"
+      },
+      "Beneficiary": "Mandy",
+      "ProductSKU": "test",
+      "LicenseMetadata": [
+        {
+          "Name": "My Awesome Software",
+          "Value": "It is an awesome project"
+        }
+      ],
+      "Entitlements": [
+        {
+          "Name": "test1",
+          "MaxCount": 200,
+          "Unit": "Count",
+          "AllowCheckIn": true,
+          "Overage": true
+        }
+      ],
+      "ConsumptionConfiguration": {
+        "RenewType": "Weekly",
+        "ProvisionalConfiguration": {
+          "maxTimeToLiveInMinutes": 60
+        }
+      },
+      "ClientToken": "eeewoi33ewoid3hw"
+    },
+    "logicalResourceIdentifier": "tagcanary-test"
+  },
+  "callbackContext": null
+}

@@ -1,0 +1,8 @@
+{
+    "GrantName": "test",
+    "HomeRegion": "us-east-1",
+    "LicenseArn": "",
+    "Principals": [""],
+    "AllowedOperations": [""],
+    "ClientToken": ""
+}

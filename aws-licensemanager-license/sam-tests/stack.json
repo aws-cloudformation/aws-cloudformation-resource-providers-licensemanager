@@ -1,0 +1,46 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "License Manager license stack",
+  "Resources": {
+    "MyLicense": {
+      "Type": "AWS::LicenseManager::License",
+      "Properties": {
+        "Issuer": {
+          "Name": "test",
+          "SignKey": "arn:aws:kms:us-west-2:619843372379:key/184558ae-e3c4-4789-bbd0-bb786d531cc6"
+        },
+        "LicenseName": "test",
+        "ProductName": "hehe",
+        "HomeRegion": "us-east-1",
+        "Validity": {
+          "Begin": "2020-04-30T11:07:36.639Z",
+          "End": "2021-09-29T11:07:36.639Z"
+        },
+        "Beneficiary": "Mandy",
+        "ProductSKU": "test",
+        "LicenseMetadata": [
+          {
+            "Name": "My Awesome Software",
+            "Value": "It is an awesome project"
+          }
+        ],
+        "Entitlements": [
+          {
+            "Name": "test1",
+            "MaxCount": 200,
+            "Unit": "Count",
+            "AllowCheckIn": true,
+            "Overage": true
+          }
+        ],
+        "ConsumptionConfiguration": {
+          "RenewType": "Weekly",
+          "ProvisionalConfiguration": {
+            "maxTimeToLiveInMinutes": 60
+          }
+        },
+        "ClientToken": "90dasownknijd89yw9uoiqhwehsbjeeeojooon9wjh"
+      }
+    }
+  }
+}
