@@ -1,0 +1,16 @@
+{
+  "credentials": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "sessionToken": ""
+  },
+  "action": "READ",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-0cfdfa211dfe",
+    "desiredResourceState": {
+      "LicenseArn": "arn:aws:license-manager::272754913151:license:l-06172a217d124dcdb5f97f01175b0e6b"
+    },
+    "logicalResourceIdentifier": "MyResource"
+  },
+  "callbackContext": null
+}

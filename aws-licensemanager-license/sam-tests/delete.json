@@ -1,0 +1,17 @@
+{
+  "credentials": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "sessionToken": ""
+  },
+  "action": "DELETE",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-0cfdfa211dfe",
+    "desiredResourceState": {
+      "LicenseArn": "arn:aws:license-manager::272754913151:license:l-6cb8a641805049ddb72924efd8a9c38f",
+      "SourceVersion": "1"
+    },
+    "logicalResourceIdentifier": "MyResource"
+  },
+  "callbackContext": null
+}

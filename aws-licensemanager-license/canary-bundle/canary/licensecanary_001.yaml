@@ -1,0 +1,50 @@
+---
+Description: "Create AWS License Manager License"
+
+Resources:
+  LambdaTestRole:
+    Type: AWS::IAM::Role
+    Properties:
+      ManagedPolicyArns:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Fn::Ref: 'AWS::Partition'
+            - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: [ 'sts:AssumeRole' ]
+            Effect: Allow
+            Principal:
+              Service: [ lambda.amazonaws.com ]
+        Version: '2012-10-17'
+  CanaryLicense:
+    Type: AWS::LicenseManager::License
+    DependsOn: LambdaTestRole
+    Properties:
+      Issuer:
+        Name: test
+      LicenseName: test
+      ProductName: hehe
+      HomeRegion:
+        Fn::Sub: '${AWS::Region}'
+      Validity:
+        Begin: '2020-04-30T11:07:36.639Z'
+        End: '2021-09-29T11:07:36.639Z'
+      Beneficiary: Mandy
+      ProductSKU: test
+      LicenseMetadata:
+        - Name: Canary test for license
+          Value: Test
+      Entitlements:
+        - Name: test1
+          MaxCount: 200
+          Unit: Count
+          AllowCheckIn: true
+          Overage: true
+      ConsumptionConfiguration:
+        RenewType: Weekly
+        ProvisionalConfiguration:
+          MaxTimeToLiveInMinutes: 60
+      ClientToken:
+        Fn::GetAtt: LambdaTestRole.Arn
