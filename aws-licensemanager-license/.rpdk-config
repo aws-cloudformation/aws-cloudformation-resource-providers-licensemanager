@@ -1,0 +1,17 @@
+{
+    "typeName": "AWS::LicenseManager::License",
+    "language": "java",
+    "runtime": "java8",
+    "entrypoint": "software.amazon.licensemanager.license.HandlerWrapper::handleRequest",
+    "testEntrypoint": "software.amazon.licensemanager.license.HandlerWrapper::testEntrypoint",
+    "settings": {
+        "namespace": [
+            "software",
+            "amazon",
+            "licensemanager",
+            "license"
+        ],
+        "codegen_template_path": "guided_aws",
+        "protocolVersion": "2.0.0"
+    }
+}

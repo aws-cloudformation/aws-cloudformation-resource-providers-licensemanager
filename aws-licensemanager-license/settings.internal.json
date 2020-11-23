@@ -1,0 +1,7 @@
+{
+  "FasPolicyPath": {
+    "aws": "/policies/AuthRuntime/authNPolicy/authNPolicy/cloudformation/aws-licensemanager-license.2020-11-06-21-39-55",
+    "aws-cn": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-licensemanager-license.2020-11-06-21-39-55-BJS",
+    "aws-us-gov": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-licensemanager-license.2020-11-06-21-39-55-PDT"
+  }
+}
