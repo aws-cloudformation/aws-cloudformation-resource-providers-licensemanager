@@ -34,7 +34,7 @@ public class ListHandler extends BaseHandlerStd {
             final List<ResourceModel> models = new ArrayList<>();
 
             // STEP 1 [TODO: construct a body of a request]
-            final ListDistributedGrantsRequest listDistributedGrantsRequest = Translator.translateToListRequest(model);
+            final ListDistributedGrantsRequest listDistributedGrantsRequest = Translator.translateToListRequest(model, request.getNextToken());
 
             ListDistributedGrantsResponse listDistributedGrantsResponse = null;
             try {

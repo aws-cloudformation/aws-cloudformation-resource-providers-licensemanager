@@ -34,7 +34,7 @@ public class ListHandler extends BaseHandlerStd {
             final List<ResourceModel> models = new ArrayList<>();
 
             // STEP 1 [TODO: construct a body of a request]
-            final ListLicensesRequest listLicensesRequest = Translator.translateToListRequest(model);
+            final ListLicensesRequest listLicensesRequest = Translator.translateToListRequest(model, request.getNextToken());
 
             ListLicensesResponse listLicensesResponse = null;
             // STEP 2 [TODO: make an api call]
