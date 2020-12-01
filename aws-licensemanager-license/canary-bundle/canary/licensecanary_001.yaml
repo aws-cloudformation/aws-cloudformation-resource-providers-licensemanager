@@ -9,7 +9,7 @@ Resources:
         Fn::Join:
           - ''
           - - 'arn:'
-            - Fn::Sub: 'AWS::Partition'
+            - Ref: 'AWS::Partition'
             - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
       AssumeRolePolicyDocument:
         Statement:
