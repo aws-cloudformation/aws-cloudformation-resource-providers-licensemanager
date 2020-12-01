@@ -229,14 +229,14 @@ public class Translator {
    * Request to update properties of a previously created resource
    * @return awsRequest the aws service request to describe resources within aws account
    */
-  static ListLicensesRequest translateToListRequest(final ResourceModel model) {
+  static ListLicensesRequest translateToListRequest(final ResourceModel model, final String nextToken) {
     List<Filter> filters = new ArrayList<>();
     if (model.getFilters() != null) {
       filters = model.getFilters().stream().map(filter -> convertFilter(filter)).collect(Collectors.toList());
     }
     final ListLicensesRequest listLicensesRequest = ListLicensesRequest.builder()
             .licenseArns(model.getLicenseArns())
-            .nextToken(model.getNextToken())
+            .nextToken(nextToken)
             .filters(filters)
             .maxResults(model.getMaxResults()).build();
     return listLicensesRequest;
