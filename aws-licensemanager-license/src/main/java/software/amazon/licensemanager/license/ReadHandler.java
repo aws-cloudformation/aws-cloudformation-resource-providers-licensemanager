@@ -59,7 +59,7 @@ public class ReadHandler extends BaseHandlerStd {
 
         } catch (ValidationException | InvalidParameterValueException e) {
             logger.log("Resource reading failed");
-            throw new CfnInvalidRequestException(ResourceModel.TYPE_NAME, e);
+            throw new CfnNotFoundException(model.getLicenseArn(), ResourceModel.TYPE_NAME, e);
         } catch (final AwsServiceException e) {
             logger.log("Resource reading failed");
             throw new CfnGeneralServiceException(ResourceModel.TYPE_NAME + e.getMessage(), e);
