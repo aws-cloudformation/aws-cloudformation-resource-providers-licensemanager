@@ -7,22 +7,6 @@
       "type": "string",
       "maxLength": 2048
     },
-    "Tag": {
-      "type": "object",
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "Name",
-        "Value"
-      ],
-      "additionalProperties": false
-    },
     "Filter": {
       "type": "object",
       "properties": {
@@ -100,13 +84,6 @@
       "uniqueItems": true,
       "items": {
         "$ref": "#/definitions/Arn"
-      }
-    },
-    "Tags": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/Tag"
       }
     },
     "Filters": {

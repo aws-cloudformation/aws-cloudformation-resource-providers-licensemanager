@@ -155,22 +155,6 @@
     "LicenseStatus": {
       "type": "string"
     },
-    "Tag": {
-      "type": "object",
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "Name",
-        "Value"
-      ],
-      "additionalProperties": false
-    },
     "Filter": {
       "type": "object",
       "properties": {
@@ -240,13 +224,6 @@
       "uniqueItems": true,
       "items": {
         "$ref": "#/definitions/Metadata"
-      }
-    },
-    "Tags": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/Tag"
       }
     },
     "LicenseArn": {
