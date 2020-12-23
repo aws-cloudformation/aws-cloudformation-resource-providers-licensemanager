@@ -70,7 +70,6 @@ public class DeleteHandlerTest extends AbstractTestBase {
                 .parentArn("parentArn")
                 .granteePrincipalArn("granteePrincipalArn")
                 .homeRegion("us-east-1")
-                .statusReason("statusReason")
                 .grantedOperations(Arrays.asList(AllowedOperation.CREATE_GRANT))
                 .version("1")
                 .build();

@@ -39,7 +39,7 @@ public class UpdateHandler extends BaseHandlerStd {
                         proxy.initiate("AWS-LicenseManager-Grant::Update", proxyClient, progress.getResourceModel(), progress.getCallbackContext())
 
                                 // STEP 2.1 [TODO: construct a body of a request]
-                                .translateToServiceRequest(Translator::translateToUpdateRequest)
+                                .translateToServiceRequest(model -> Translator.translateToUpdateRequest(model, request.getClientRequestToken()))
 
                                 // STEP 2.2 [TODO: make an api call]
                                 .makeServiceCall((awsRequest, client) -> createGrantVersion(progress.getResourceModel(), awsRequest, client))
