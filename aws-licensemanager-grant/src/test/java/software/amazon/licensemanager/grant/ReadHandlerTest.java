@@ -77,12 +77,10 @@ public class ReadHandlerTest extends AbstractTestBase {
 
         final ResourceModel model = ResourceModel.builder()
                 .grantArn("grantArn")
-                .grantStatus("ACTIVE")
                 .grantName("grantName")
                 .parentArn("parentArn")
                 .granteePrincipalArn("granteePrincipalArn")
                 .homeRegion("us-east-1")
-                .statusReason("statusReason")
                 .grantedOperations(Arrays.asList("CreateGrant"))
                 .version("1")
                 .build();

@@ -36,7 +36,7 @@ public class Translator {
    * @param model resource model
    * @return awsRequest the aws service request to create a resource
    */
-  static CreateLicenseRequest translateToCreateRequest(final ResourceModel model) {
+  static CreateLicenseRequest translateToCreateRequest(final ResourceModel model, final String clientToken) {
     Issuer issuer = Issuer.builder()
             .name(model.getIssuer().getName())
             .signKey(model.getIssuer().getSignKey()).build();
@@ -74,7 +74,7 @@ public class Translator {
             .licenseName(model.getLicenseName())
             .productName(model.getProductName())
             .beneficiary(model.getBeneficiary())
-            .clientToken(model.getClientToken())
+            .clientToken(clientToken)
             .homeRegion(model.getHomeRegion())
             .issuer(issuer)
             .validity(validity)
@@ -175,7 +175,7 @@ public class Translator {
    * @param model resource model
    * @return awsRequest the aws service request to modify a resource
    */
-  static CreateLicenseVersionRequest translateToUpdateRequest(final ResourceModel model) {
+  static CreateLicenseVersionRequest translateToUpdateRequest(final ResourceModel model, final String clientToken) {
     Issuer issuer = Issuer.builder()
             .name(model.getIssuer().getName())
             .signKey(model.getIssuer().getSignKey()).build();
@@ -220,7 +220,7 @@ public class Translator {
             .entitlements(entitlements)
             .consumptionConfiguration(consumptionConfiguration)
             .status(model.getStatus())
-            .clientToken(model.getClientToken())
+            .clientToken(clientToken)
             .build();
     return createLicenseVersionRequest;
   }
@@ -238,7 +238,7 @@ public class Translator {
             .licenseArns(model.getLicenseArns())
             .nextToken(nextToken)
             .filters(filters)
-            .maxResults(model.getMaxResults()).build();
+            .build();
     return listLicensesRequest;
   }
 
