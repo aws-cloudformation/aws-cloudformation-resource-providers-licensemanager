@@ -36,9 +36,9 @@ public class Translator {
    * @param model resource model
    * @return awsRequest the aws service request to create a resource
    */
-  static CreateGrantRequest translateToCreateRequest(final ResourceModel model) {
+  static CreateGrantRequest translateToCreateRequest(final ResourceModel model, final String clientToken) {
     final CreateGrantRequest createGrantRequest = CreateGrantRequest.builder()
-            .clientToken(model.getClientToken())
+            .clientToken(clientToken)
             .homeRegion(model.getHomeRegion())
             .grantName(model.getGrantName())
             .licenseArn(model.getLicenseArn())
@@ -97,8 +97,6 @@ public class Translator {
             .licenseArn(grant.licenseArn())
             .granteePrincipalArn(grant.granteePrincipalArn())
             .homeRegion(grant.homeRegion())
-            .grantStatus(grant.grantStatus().toString())
-            .statusReason(grant.statusReason())
             .version(grant.version())
             .grantedOperations(grant.grantedOperationsAsStrings())
             .build();
@@ -121,9 +119,9 @@ public class Translator {
    * @param model resource model
    * @return awsRequest the aws service request to modify a resource
    */
-  static CreateGrantVersionRequest translateToUpdateRequest(final ResourceModel model) {
+  static CreateGrantVersionRequest translateToUpdateRequest(final ResourceModel model, final String clientToken) {
     final CreateGrantVersionRequest createLicenseVersionRequest = CreateGrantVersionRequest.builder()
-            .clientToken(model.getClientToken())
+            .clientToken(clientToken)
             .grantArn(model.getGrantArn())
             .grantName(model.getGrantName())
             .allowedOperationsWithStrings(model.getGrantedOperations())
@@ -146,7 +144,7 @@ public class Translator {
             .grantArns(model.getGrantArns())
             .nextToken(nextToken)
             .filters(filters)
-            .maxResults(model.getMaxResults()).build();
+            .build();
     return listDistributedGrantsRequest;
   }
 

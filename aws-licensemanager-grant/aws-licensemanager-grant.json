@@ -7,27 +7,6 @@
       "type": "string",
       "maxLength": 2048
     },
-    "ArnList": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/Arn"
-      }
-    },
-    "AllowedOperationList": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string"
-      }
-    },
-    "TagList": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/Tag"
-      }
-    },
     "Tag": {
       "type": "object",
       "properties": {
@@ -44,13 +23,6 @@
       ],
       "additionalProperties": false
     },
-    "StringList": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string"
-      }
-    },
     "Filter": {
       "type": "object",
       "properties": {
@@ -58,7 +30,11 @@
           "type": "string"
         },
         "Values": {
-          "$ref": "#/definitions/StringList"
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
@@ -66,13 +42,6 @@
         "Values"
       ],
       "additionalProperties": false
-    },
-    "FilterList": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/Filter"
-      }
     }
   },
   "properties": {
@@ -82,7 +51,11 @@
     },
     "GrantArns": {
       "description": "Arns of the grants.",
-      "$ref": "#/definitions/ArnList"
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Arn"
+      }
     },
     "GrantName": {
       "description": "Name for the created Grant.",
@@ -104,42 +77,44 @@
       "description": "Home region for the created license.",
       "type": "string"
     },
-    "GrantStatus": {
-      "type": "string"
-    },
-    "StatusReason": {
-      "description": "Reason of the status.",
-      "type": "string"
-    },
     "Version": {
       "description": "The version of the grant.",
       "type": "string"
     },
     "GrantedOperations": {
-      "$ref": "#/definitions/AllowedOperationList"
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
     },
     "AllowedOperations": {
-      "$ref": "#/definitions/AllowedOperationList"
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
     },
     "Principals": {
-      "$ref": "#/definitions/ArnList"
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Arn"
+      }
     },
     "Tags": {
-      "$ref": "#/definitions/TagList"
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      }
     },
     "Filters": {
-      "$ref": "#/definitions/FilterList"
-    },
-    "MaxResults": {
-      "type": "integer",
-      "minLength": 1,
-      "maxLength": 100
-    },
-    "NextToken": {
-      "type": "string"
-    },
-    "ClientToken": {
-      "type": "string"
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Filter"
+      }
     },
     "Status": {
       "type": "string"
@@ -155,12 +130,10 @@
     "/properties/GrantArn"
   ],
   "writeOnlyProperties": [
-    "/properties/ClientToken",
     "/properties/GranteePrincipalArn",
     "/properties/Principals",
     "/properties/AllowedOperations",
     "/properties/GrantedOperations",
-    "/properties/GrantStatus",
     "/properties/ParentArn",
     "/properties/Version"
   ],

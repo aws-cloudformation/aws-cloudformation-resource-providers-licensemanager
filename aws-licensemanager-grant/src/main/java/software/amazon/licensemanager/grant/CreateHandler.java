@@ -46,7 +46,7 @@ public class CreateHandler extends BaseHandlerStd {
                         proxy.initiate("AWS-LicenseManager-Grant::Create", proxyClient, resourceModel, callbackContext)
 
                                 // STEP 2.1 [TODO: construct a body of a request]
-                                .translateToServiceRequest(Translator::translateToCreateRequest)
+                                .translateToServiceRequest(model -> Translator.translateToCreateRequest(model, request.getClientRequestToken()))
 
                                 // STEP 2.2 [TODO: make an api call]
                                 .makeServiceCall((awsRequest, client) -> createGrant(progress, client, awsRequest, resourceModel, request))
